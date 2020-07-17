@@ -67,9 +67,6 @@ struct ContentView: View {
                 Spacer()
             }
         }
-        
-        
-        
     }
 }
 
