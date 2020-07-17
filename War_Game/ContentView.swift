@@ -27,12 +27,14 @@ struct ContentView: View {
                 Spacer() // Adds space between the top object and the bottom object
                 
                 HStack{//Put the items next to each other
+                    // At first shows the back of the card
                     if self.player_card == 0 &&
                         self.opponent_card == 0{
                         Image("back")
                         Image("back")
                     }
                     else{
+                        // Changes the card according to the random number
                         Image("card" + String(player_card))
                         Image("card" + String(opponent_card))
                     }
