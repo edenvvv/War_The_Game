@@ -13,6 +13,7 @@ struct ContentView: View {
             
             Image("background")
                 .resizable()
+                .padding(.bottom, -80.0)
                 .edgesIgnoringSafeArea(.all)
             
             VStack{//Put the items on top of each other
@@ -67,15 +68,31 @@ struct ContentView: View {
                 
                 HStack{
                     VStack{
-                        Text("Your score:").bold().padding(.bottom,25)
-                        Text(String(self.player_score))
+                        Text("Your score:").font(.title).bold().padding(.bottom,25)
+                        
+                        Spacer().frame(height: 16.5)
+                        
+                        Text(String(self.player_score)).font(.largeTitle)
+                        .fontWeight(.bold)
                     }.padding(.leading,15).foregroundColor(.white)
                     
                     Spacer()
                     
                     VStack{
-                        Text("opponent score:").bold().padding(.bottom,25)
+                        VStack(){
+                            Text("opponent ").font(.title).bold().padding(.bottom,25)
+                            
+                            Spacer().frame(height: -25.0)
+                            
+                            Text("score:").font(.title).bold().padding(.bottom,25)
+                        }
+                        
+                        Spacer().frame(height: -15.0)
+                        
                         Text(String(self.opponent_score))
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            
                     }.padding(.trailing,15).foregroundColor(.white)
                 }
                 Spacer()
