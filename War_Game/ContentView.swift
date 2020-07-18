@@ -56,16 +56,15 @@ struct ContentView: View {
                 }
                 
                 Spacer()
-                    .frame(height: 55.0)
-                
+                    .frame(height: 88.0)
                 Button(action: {
                     self.button_action()
                     
                 }, label: {
-                    Image("dealbutton").renderingMode(.original)// Displays the image in its original form
+                    Image("dealbutton").renderingMode(.original).padding([.leading, .bottom], -25.0)// Displays the image in its original form
                 })
                 
-                Spacer()
+                Spacer().frame(height: 40.0)
                 
                 HStack{
                     VStack{
