@@ -19,27 +19,42 @@ struct ContentView: View {
                 Spacer()
                 Image("logo")
                 
-                HStack() {
-                    Text("You:")
-                }.padding(.leading,-80).foregroundColor(.white)
-                    
+                Spacer()
+                    .padding()
+                    .frame(height: 45.0) // Adds space between the top object and the bottom object
                 
-                Spacer() // Adds space between the top object and the bottom object
                 
-                HStack{//Put the items next to each other
-                    // At first shows the back of the card
-                    if self.player_card == 0 &&
-                        self.opponent_card == 0{
-                        Image("back")
-                        Image("back")
+                VStack(){
+                    HStack(){
+                        Text(" You")
+                            .font(.title)
+                        .foregroundColor(Color.white)
+                            .padding(.leading, 20.0)
+                        
+                        Text("Opponent")
+                            .font(.title)
+                        .foregroundColor(Color.white)
+                            .padding(.leading, 50.0)
                     }
-                    else{
-                        // Changes the card according to the random number
-                        Image("card" + String(player_card))
-                        Image("card" + String(opponent_card))
+                    Spacer().padding()
+                    .frame(height: 20.0)
+                    HStack{//Put the items next to each other
+                        // At first shows the back of the card
+                        if self.player_card == 0 &&
+                            self.opponent_card == 0{
+                            Image("back")
+                            Image("back")
+                        }
+                        else{
+                            // Changes the card according to the random number
+                            Image("card" + String(player_card))
+                            Image("card" + String(opponent_card))
+                        }
                     }
                 }
+                
                 Spacer()
+                    .frame(height: 55.0)
                 
                 Button(action: {
                     self.button_action()
