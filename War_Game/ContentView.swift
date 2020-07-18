@@ -44,6 +44,7 @@ struct ContentView: View {
                         if self.player_card == 0 &&
                             self.opponent_card == 0{
                             Image("back")
+                            
                             Image("back")
                         }
                         else{
