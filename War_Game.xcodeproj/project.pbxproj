@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE7016B724C3A58200296442 /* The_Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7016B624C3A58200296442 /* The_Game.swift */; };
 		CE952E2124C23E0000A6B338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE952E2024C23E0000A6B338 /* AppDelegate.swift */; };
 		CE952E2324C23E0000A6B338 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE952E2224C23E0000A6B338 /* SceneDelegate.swift */; };
 		CE952E2524C23E0000A6B338 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE952E2424C23E0000A6B338 /* ContentView.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE7016B624C3A58200296442 /* The_Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Game.swift; sourceTree = "<group>"; };
 		CE952E1D24C23E0000A6B338 /* War_Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = War_Game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE952E2024C23E0000A6B338 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE952E2224C23E0000A6B338 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				CE952E2024C23E0000A6B338 /* AppDelegate.swift */,
 				CE952E2224C23E0000A6B338 /* SceneDelegate.swift */,
 				CE952E2424C23E0000A6B338 /* ContentView.swift */,
+				CE7016B624C3A58200296442 /* The_Game.swift */,
 				CE952E2624C23E0100A6B338 /* Assets.xcassets */,
 				CE952E2B24C23E0100A6B338 /* LaunchScreen.storyboard */,
 				CE952E2E24C23E0100A6B338 /* Info.plist */,
@@ -269,6 +272,7 @@
 			files = (
 				CE952E2124C23E0000A6B338 /* AppDelegate.swift in Sources */,
 				CE952E2324C23E0000A6B338 /* SceneDelegate.swift in Sources */,
+				CE7016B724C3A58200296442 /* The_Game.swift in Sources */,
 				CE952E2524C23E0000A6B338 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
