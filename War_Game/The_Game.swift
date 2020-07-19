@@ -8,6 +8,8 @@ struct The_Game: View {
     @State private var player_score = 0
     @State private var opponent_score = 0
     
+    @State static var player_name = " "
+    
     var body: some View {
         
         ZStack{//Put the items in each other's background
@@ -28,14 +30,15 @@ struct The_Game: View {
                 
                 VStack(){
                     HStack(){
-                        Text(" You")
-                            .font(.title)
+                        Text(The_Game.player_name)
+                            .font(.largeTitle)
                         .foregroundColor(Color.white)
-                            .padding(.leading, 20.0)
+                            .padding(.leading, 40.0)
                         
                         Text("Opponent")
-                            .font(.title)
-                        .foregroundColor(Color.white)
+                            .font(.largeTitle)
+                            .foregroundColor(Color.white)
+                            
                             .padding(.leading, 50.0)
                     }
                     Spacer().padding()
