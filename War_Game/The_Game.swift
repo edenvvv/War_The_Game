@@ -2,13 +2,14 @@
 import SwiftUI
 
 struct The_Game: View {
+    var player_name:String
+    
     @State private var player_card = 0
     @State private var opponent_card = 0
     
     @State private var player_score = 0
     @State private var opponent_score = 0
     
-    @State static var player_name = " "
     
     var body: some View {
         
@@ -30,7 +31,7 @@ struct The_Game: View {
                 
                 VStack(){
                     HStack(){
-                        Text(The_Game.player_name)
+                        Text(player_name)
                             .font(.largeTitle)
                         .foregroundColor(Color.white)
                             .padding(.leading, 40.0)
@@ -128,6 +129,6 @@ struct The_Game: View {
 
 struct The_Game_Previews: PreviewProvider {
     static var previews: some View {
-        The_Game()
+        The_Game(player_name: "You")
     }
 }

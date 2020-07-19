@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var nickname: String = ""
+    @State var nickname: String = " "
     var body: some View {
             NavigationView {
                 
@@ -30,12 +30,18 @@ struct ContentView: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                         Spacer()
                             .frame(height: 25.0)
-                        NavigationLink(destination: The_Game()) { // "The_Game()" is from The_Game file
-                        Image("dealbutton").renderingMode(.original).padding([.leading, .bottom], 125.0).frame(height: 200.0)// Displays the image in its original form
-                        Spacer()
-                        .frame(height: 130.0)
-                    }.padding()
-                    
+                        if self.nickname != " "{
+                            NavigationLink(destination: The_Game(player_name: nickname)) { // "The_Game()" is from The_Game file
+                                Image("dealbutton").renderingMode(.original).padding([.leading, .bottom], 125.0).frame(height: 200.0)// Displays the image in its original form
+                                Spacer()
+                                .frame(height: 130.0)
+                            }.padding()
+                        }
+                        else{
+                            Spacer()
+                            .frame(height: 395.0)
+                        }
+                        
                 }
                 
            }.buttonStyle(PlainButtonStyle())
