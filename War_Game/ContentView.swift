@@ -41,7 +41,6 @@ struct ContentView: View {
                             Spacer()
                             .frame(height: 395.0)
                         }
-                        
                 }
                 
            }.buttonStyle(PlainButtonStyle())

@@ -40,7 +40,7 @@ struct The_Game: View {
                             .font(.largeTitle)
                             .foregroundColor(Color.white)
                             
-                            .padding(.leading, 50.0)
+                            .padding(.leading, 20.0)
                     }
                     Spacer().padding()
                     .frame(height: 20.0)
