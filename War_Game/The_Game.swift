@@ -97,7 +97,9 @@ struct The_Game: View {
                     }.padding(.trailing,15).foregroundColor(.white)
                 }
                 Spacer()
+                    
             }
+            .padding(.top, -65.0)
         }
     }
     
