@@ -3,8 +3,8 @@ import SwiftUI
 
 struct war_case: View {
     
-    @State private var player_card = 0
-    @State private var opponent_card = 0
+    @State private var player_card = [0,0,0]
+    @State private var opponent_card = [0,0,0]
     
     @State private var player_score = 0
     @State private var opponent_score = 0
@@ -35,17 +35,22 @@ struct war_case: View {
                 
                 HStack{//Put the items next to each other
                     // At first shows the back of the card
-                    if self.player_card == 0 &&
-                        self.opponent_card == 0{
-                        Image("back")
-                        Spacer()
+                    if self.player_card[0] == 0{
                         Image("back")
                     }
                     else{
-                        // Changes the card according to the random number
-                        Image("card" + String(player_card))
-                        Spacer()
-                        Image("card" + String(opponent_card))
+                    // Changes the card according to the random number
+                    Image("card" + String(player_card[0]))
+                    }
+                    
+                    Spacer()
+                    
+                    if self.opponent_card[0] == 0{
+                        Image("back")
+                    }
+                    else{
+                    // Changes the card according to the random number
+                    Image("card" + String(opponent_card[0]))
                     }
                 }
                 .padding(.horizontal, 22.5)
@@ -54,17 +59,22 @@ struct war_case: View {
                 .frame(height: 20.0)
                 HStack{//Put the items next to each other
                     // At first shows the back of the card
-                    if self.player_card == 0 &&
-                        self.opponent_card == 0{
-                        Image("back")
-                        Spacer()
+                    if self.player_card[1] == 0{
                         Image("back")
                     }
                     else{
-                        // Changes the card according to the random number
-                        Image("card" + String(player_card))
-                        Spacer()
-                        Image("card" + String(opponent_card))
+                    // Changes the card according to the random number
+                    Image("card" + String(player_card[1]))
+                    }
+                    
+                    Spacer()
+                    
+                    if self.opponent_card[1] == 0{
+                        Image("back")
+                    }
+                    else{
+                    // Changes the card according to the random number
+                    Image("card" + String(opponent_card[1]))
                     }
                 }
                 .padding(.horizontal, 22.5)
@@ -72,17 +82,22 @@ struct war_case: View {
                 .frame(height: 20.0)
                 HStack{//Put the items next to each other
                     // At first shows the back of the card
-                    if self.player_card == 0 &&
-                        self.opponent_card == 0{
-                        Image("back")
-                        Spacer()
+                    if self.player_card[2] == 0{
                         Image("back")
                     }
                     else{
-                        // Changes the card according to the random number
-                        Image("card" + String(player_card))
-                        Spacer()
-                        Image("card" + String(opponent_card))
+                    // Changes the card according to the random number
+                    Image("card" + String(player_card[2]))
+                    }
+                    
+                    Spacer()
+                    
+                    if self.opponent_card[2] == 0{
+                        Image("back")
+                    }
+                    else{
+                    // Changes the card according to the random number
+                    Image("card" + String(opponent_card[2]))
                     }
                 }
                 .padding(.horizontal, 22.5)
