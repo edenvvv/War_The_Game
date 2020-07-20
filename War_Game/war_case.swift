@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct war_case: View {
-    @State private var showingAlert = false
+    @State private var showActionSheet = false
     
     @State private var player_cards = [0,0,0]
     @State private var opponent_cards = [0,0,0]
@@ -32,15 +32,6 @@ struct war_case: View {
                         .padding(.trailing)
                         
                 }
-//
-                Button("Show Alert") {
-                    self.showingAlert = true
-                    self.flips_cards()
-                }
-                .alert(isPresented: $showingAlert) {
-                    Alert(title: Text("Hello SwiftUI!"), message: Text("This is some detail message"), dismissButton: .default(Text("OK")))
-                }
-//
                 HStack{//Put the items next to each other
                     // At first shows the back of the card
                     if self.player_cards[0] == 0{
@@ -62,6 +53,17 @@ struct war_case: View {
                     }
                 }
                 .padding(.horizontal, 22.5)
+                
+                if self.player_cards[0] == 0{
+                    Button(action: {
+                        self.flips_cards()
+                        
+                    }, label: {
+                        Image("dealbutton").renderingMode(.original).padding(.top, 200.0)// Displays the image in its original form
+                    })
+                        .frame(height:-5.0)
+                }
+                
                 
                 Spacer().padding()
                 .frame(height: 20.0)
@@ -129,12 +131,28 @@ struct war_case: View {
     }
     func flips_cards() {
         for card_num in 0...2 {
-            sleep(2)
             player_cards[card_num] = Int.random(in: 2...14)
-            sleep(2)
+            player_score += player_cards[card_num]
             opponent_cards[card_num] = Int.random(in: 2...14)
+            opponent_score += opponent_cards[card_num]
         }
     }
+    
+    //
+    func is_winner() -> Bool{
+        if self.player_score > self.opponent_score{
+            return true
+        }
+        else if self.player_score < self.opponent_score{
+            return false
+        }
+        else{
+            self.flips_cards()
+            return war_case().is_winner()
+        }
+    }
+    //
+    
 }
 
 struct war_case_Previews: PreviewProvider {
