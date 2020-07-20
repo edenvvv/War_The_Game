@@ -6,6 +6,9 @@ struct war_case: View {
     @State private var player_card = 0
     @State private var opponent_card = 0
     
+    @State private var player_score = 0
+    @State private var opponent_score = 0
+    
     var body: some View {
         ZStack{//Put the items in each other's background
         
@@ -83,7 +86,19 @@ struct war_case: View {
                     }
                 }
                 .padding(.horizontal, 22.5)
+                Spacer().padding()
+                .frame(height: 20.0)
                 
+                HStack{
+                    Text(String(self.player_score)).font(.largeTitle)
+                    .fontWeight(.bold)
+                    
+                    Spacer().padding()
+                        .frame(width: 193.0)
+                    
+                    Text(String(self.opponent_score)).font(.largeTitle)
+                    .fontWeight(.bold)
+                }.padding(.leading,0).foregroundColor(.white)
             }
         }
     }
