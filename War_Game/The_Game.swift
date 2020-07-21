@@ -10,6 +10,11 @@ struct The_Game: View {
     @State private var player_score = 0
     @State private var opponent_score = 0
     
+    @State var case_war = false
+    
+    @State private var showingAlert = false
+    
+    
     
     var body: some View {
         
@@ -60,14 +65,30 @@ struct The_Game: View {
                     }
                 }
                 
+                
+                
+                
                 Spacer()
                     .frame(height: 88.0)
-                Button(action: {
-                    self.button_action()
-                    
-                }, label: {
-                    Image("dealbutton").renderingMode(.original).padding([.leading, .bottom], -25.0)// Displays the image in its original form
-                })
+                
+                
+                    Button(action: {
+                        self.showingAlert = false
+                        self.button_action()
+                        if self.case_war {
+                            self.showingAlert = true
+                            self.case_war = false
+                        }
+                        
+                    }, label: {
+                        Image("dealbutton").renderingMode(.original).padding([.leading, .bottom], -25.0)// Displays the image in its original form
+                    }).alert(isPresented: $showingAlert) {
+                        Alert(title: Text("War!"), message: Text("Are you ready?"), dismissButton: .default(Text("Ok"))
+                        {
+                            war_case().flips_cards()
+                            })
+                        }
+                
                 
                 Spacer().frame(height: 40.0)
                 
@@ -121,8 +142,7 @@ struct The_Game: View {
             self.opponent_score += 1
         }
         else{
-            self.player_score += 1
-            self.opponent_score += 1
+            self.case_war = true
         }
     }
 }

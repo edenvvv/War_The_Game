@@ -10,6 +10,8 @@ struct war_case: View {
     @State private var player_score = 0
     @State private var opponent_score = 0
     
+    @State static var winner = -1
+    
     var body: some View {
         ZStack{//Put the items in each other's background
             Image("background")
@@ -57,6 +59,7 @@ struct war_case: View {
                 if self.player_cards[0] == 0{
                     Button(action: {
                         self.flips_cards()
+                        
                         
                     }, label: {
                         Image("dealbutton").renderingMode(.original).padding(.top, 200.0)// Displays the image in its original form
@@ -114,7 +117,10 @@ struct war_case: View {
                 Spacer().padding()
                 .frame(height: 20.0)
                 
-                
+//
+                Text("blob \(war_case.winner)")
+                    .foregroundColor(Color.white)
+//
                 
                 HStack{
                     Text(String(self.player_score)).font(.largeTitle)
@@ -131,27 +137,25 @@ struct war_case: View {
     }
     func flips_cards() {
         for card_num in 0...2 {
-            player_cards[card_num] = Int.random(in: 2...14)
-            player_score += player_cards[card_num]
-            opponent_cards[card_num] = Int.random(in: 2...14)
-            opponent_score += opponent_cards[card_num]
+            self.player_cards[card_num] = Int.random(in: 2...14)
+            self.player_score += player_cards[card_num]
+            self.opponent_cards[card_num] = Int.random(in: 2...14)
+            self.opponent_score += opponent_cards[card_num]
+        }
+        if self.player_score > self.opponent_score{
+            war_case.winner = 1
+            print(war_case.winner)
+        }
+        else if self.player_score < self.opponent_score{
+            war_case.winner = 0
+            print(war_case.winner)
+        }
+        else{
+            print(war_case.winner)
+            self.flips_cards()
         }
     }
     
-    //
-    func is_winner() -> Bool{
-        if self.player_score > self.opponent_score{
-            return true
-        }
-        else if self.player_score < self.opponent_score{
-            return false
-        }
-        else{
-            self.flips_cards()
-            return war_case().is_winner()
-        }
-    }
-    //
     
 }
 
