@@ -12,11 +12,10 @@ struct The_Game: View {
     
     @State var case_war = false
     
-    @State private var showingAlert = false
-    
     
     
     var body: some View {
+        NavigationView {
         
         ZStack{//Put the items in each other's background
             
@@ -66,28 +65,27 @@ struct The_Game: View {
                 }
                 
                 
-                
-                
                 Spacer()
                     .frame(height: 88.0)
                 
-                
-                    Button(action: {
-                        self.showingAlert = false
-                        self.button_action()
-                        if self.case_war {
-                            self.showingAlert = true
-                            self.case_war = false
-                        }
+                if self.case_war {
+                    NavigationLink(destination: war_case(base: self)) { // "war_case()" is from war_case file
+                        Image("logo").renderingMode(.original)// Displays the image in its original form
                         
-                    }, label: {
-                        Image("dealbutton").renderingMode(.original).padding([.leading, .bottom], -25.0)// Displays the image in its original form
-                    }).alert(isPresented: $showingAlert) {
-                        Alert(title: Text("War!"), message: Text("Are you ready?"), dismissButton: .default(Text("Ok"))
-                        {
-                            war_case().flips_cards()
-                            })
-                        }
+                    }
+                }
+                
+                
+                Button(action: {
+                    self.button_action()
+
+                    
+                }, label: {
+                    Image("dealbutton").renderingMode(.original).padding([.leading, .bottom], -25.0)// Displays the image in its original form
+                })
+                    
+                
+                    
                 
                 
                 Spacer().frame(height: 40.0)
@@ -126,6 +124,7 @@ struct The_Game: View {
             }
             .padding(.top, -65.0)
         }
+        }
     }
     
     func button_action(){
@@ -145,6 +144,11 @@ struct The_Game: View {
             self.case_war = true
         }
     }
+    
+    func set_war_status() {
+        self.case_war = false
+    }
+    
 }
 
 struct The_Game_Previews: PreviewProvider {

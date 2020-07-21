@@ -2,6 +2,7 @@
 import SwiftUI
 
 struct war_case: View {
+    var base:The_Game
     @State private var showActionSheet = false
     
     @State private var player_cards = [0,0,0]
@@ -59,6 +60,7 @@ struct war_case: View {
                 if self.player_cards[0] == 0{
                     Button(action: {
                         self.flips_cards()
+                        self.base.set_war_status()
                         
                         
                     }, label: {
@@ -161,6 +163,6 @@ struct war_case: View {
 
 struct war_case_Previews: PreviewProvider {
     static var previews: some View {
-        war_case()
+        war_case(base: The_Game(player_name: "String"))
     }
 }

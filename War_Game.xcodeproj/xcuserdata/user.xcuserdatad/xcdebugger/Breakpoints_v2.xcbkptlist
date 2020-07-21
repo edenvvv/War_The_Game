@@ -14,8 +14,8 @@
             filePath = "War_Game/war_case.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "flips_cards()"
             landmarkType = "7">
          </BreakpointContent>
