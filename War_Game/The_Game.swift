@@ -72,7 +72,7 @@ struct The_Game: View {
                     NavigationLink(destination: war_case(base: self)) { // "war_case()" is from war_case file
                         Image("logo").renderingMode(.original)// Displays the image in its original form
                         
-                    }
+                    }.navigationBarBackButtonHidden(true)
                 }
                 
                 
@@ -82,7 +82,7 @@ struct The_Game: View {
                     
                 }, label: {
                     Image("dealbutton").renderingMode(.original).padding([.leading, .bottom], -25.0)// Displays the image in its original form
-                })
+                }).navigationBarBackButtonHidden(true)
                     
                 
                     
@@ -124,7 +124,7 @@ struct The_Game: View {
             }
             .padding(.top, -65.0)
         }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
     
     func button_action(){

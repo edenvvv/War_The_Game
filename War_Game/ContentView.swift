@@ -35,7 +35,7 @@ struct ContentView: View {
                                 Image("dealbutton").renderingMode(.original).padding([.leading, .bottom], 125.0).frame(height: 200.0)// Displays the image in its original form
                                 Spacer()
                                 .frame(height: 130.0)
-                            }.padding()
+                            }.navigationBarBackButtonHidden(true).padding()
                         }
                         else{
                             Spacer()

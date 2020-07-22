@@ -60,12 +60,12 @@ struct war_case: View {
                 if self.player_cards[0] == 0{
                     Button(action: {
                         self.flips_cards()
-                        self.base.set_war_status()
+                        //self.base.set_war_status()
                         
                         
                     }, label: {
                         Image("dealbutton").renderingMode(.original).padding(.top, 200.0)// Displays the image in its original form
-                    })
+                    }).navigationBarBackButtonHidden(true)
                         .frame(height:-5.0)
                 }
                 
@@ -119,10 +119,10 @@ struct war_case: View {
                 Spacer().padding()
                 .frame(height: 20.0)
                 
-//
+/*
                 Text("blob \(war_case.winner)")
                     .foregroundColor(Color.white)
-//
+*/
                 
                 HStack{
                     Text(String(self.player_score)).font(.largeTitle)
