@@ -68,6 +68,14 @@ struct war_case: View {
                     }).navigationBarBackButtonHidden(true)
                         .frame(height:-5.0)
                 }
+                else{
+                    Button(action: {
+                        self.base.set_war_status()
+                    }, label: {
+                        Image("backButton").renderingMode(.original).padding(.top, 200.0)// Displays the image in its original form
+                    }).navigationBarBackButtonHidden(true)
+                        .frame(height:-5.0)
+                }
                 
                 
                 Spacer().padding()
