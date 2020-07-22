@@ -142,6 +142,8 @@ struct war_case: View {
                     Text(String(self.opponent_score)).font(.largeTitle)
                     .fontWeight(.bold)
                 }.padding(.leading,0).foregroundColor(.white)
+                Spacer()
+                    .padding(.top, 150.0)
             }
         }
     }
