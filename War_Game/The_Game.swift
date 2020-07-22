@@ -72,7 +72,7 @@ struct The_Game: View {
                     NavigationLink(destination: war_case(base: self)) { // "war_case()" is from war_case file
                         Image("logo").renderingMode(.original).padding(.leading, -25.0)// Displays the image in its original form
                         
-                    }.navigationBarBackButtonHidden(true)
+                    }.padding(.top, -15.0).navigationBarBackButtonHidden(true)
                 }
                 
                 else{
