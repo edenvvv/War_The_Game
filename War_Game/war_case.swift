@@ -11,8 +11,6 @@ struct war_case: View {
     @State private var player_score = 0
     @State private var opponent_score = 0
     
-    @State static var winner = -1
-    
     var body: some View {
         ZStack{//Put the items in each other's background
             Image("background")
@@ -68,6 +66,15 @@ struct war_case: View {
                 }
                 else{
                     Button(action: {
+                        if self.player_score > self.opponent_score{
+                            self.base.Increase_player()
+                        }
+                        else if self.player_score < self.opponent_score{
+                            self.base.Increase_opponent()
+                        }
+                        else{
+                            self.flips_cards()
+                        }
                         self.base.set_war_status()
                     }, label: {
                         Image("backButton").renderingMode(.original).padding(.top, 200.0)// Displays the image in its original form
@@ -125,11 +132,6 @@ struct war_case: View {
                 Spacer().padding()
                 .frame(height: 20.0)
                 
-/*
-                Text("blob \(war_case.winner)")
-                    .foregroundColor(Color.white)
-*/
-                
                 HStack{
                     Text(String(self.player_score)).font(.largeTitle)
                     .fontWeight(.bold)
@@ -150,21 +152,7 @@ struct war_case: View {
             self.opponent_cards[card_num] = Int.random(in: 2...14)
             self.opponent_score += opponent_cards[card_num]
         }
-        if self.player_score > self.opponent_score{
-            war_case.winner = 1
-            print(war_case.winner)
-        }
-        else if self.player_score < self.opponent_score{
-            war_case.winner = 0
-            print(war_case.winner)
-        }
-        else{
-            print(war_case.winner)
-            self.flips_cards()
-        }
     }
-    
-    
 }
 
 struct war_case_Previews: PreviewProvider {

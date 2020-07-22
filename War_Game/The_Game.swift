@@ -146,6 +146,14 @@ struct The_Game: View {
         self.case_war = false
     }
     
+    func Increase_player() {
+        self.player_score += 1
+    }
+    
+    func Increase_opponent() {
+        self.opponent_score += 1
+    }
+    
 }
 
 struct The_Game_Previews: PreviewProvider {
