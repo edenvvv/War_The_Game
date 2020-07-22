@@ -68,24 +68,21 @@ struct The_Game: View {
                 Spacer()
                     .frame(height: 88.0)
                 
-                if self.case_war {
+                if self.case_war{
                     NavigationLink(destination: war_case(base: self)) { // "war_case()" is from war_case file
-                        Image("logo").renderingMode(.original)// Displays the image in its original form
+                        Image("logo").renderingMode(.original).padding(.leading, -25.0)// Displays the image in its original form
                         
                     }.navigationBarBackButtonHidden(true)
                 }
                 
-                
-                Button(action: {
-                    self.button_action()
-
-                    
-                }, label: {
-                    Image("dealbutton").renderingMode(.original).padding([.leading, .bottom], -25.0)// Displays the image in its original form
-                }).navigationBarBackButtonHidden(true)
-                    
-                
-                    
+                else{
+                    Button(action: {
+                        self.button_action()
+                        
+                    }, label: {
+                        Image("dealbutton").renderingMode(.original).padding([.leading, .bottom], -25.0)// Displays the image in its original form
+                    }).navigationBarBackButtonHidden(true)
+                }
                 
                 
                 Spacer().frame(height: 40.0)

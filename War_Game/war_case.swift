@@ -60,8 +60,6 @@ struct war_case: View {
                 if self.player_cards[0] == 0{
                     Button(action: {
                         self.flips_cards()
-                        //self.base.set_war_status()
-                        
                         
                     }, label: {
                         Image("dealbutton").renderingMode(.original).padding(.top, 200.0)// Displays the image in its original form
