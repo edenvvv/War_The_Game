@@ -73,6 +73,8 @@ struct war_case: View {
                             self.base.Increase_opponent()
                         }
                         else{
+                            self.player_score = 0
+                            self.opponent_score = 0
                             self.flips_cards()
                         }
                         self.base.set_war_status()
