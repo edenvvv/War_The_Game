@@ -13,6 +13,7 @@
 
 <img src="https://github.com/edenvvv/War_The_Game/blob/master/How_does_it_look/Draw_case.jpg" width="200" height="400" />
 
-## War!!! War!!! War!!!
+## It's time of war!
+### War!!! War!!! War!!!
 
 <img src="https://github.com/edenvvv/War_The_Game/blob/master/How_does_it_look/Back_war_case.jpg" width="200" height="400" />  <img src="https://github.com/edenvvv/War_The_Game/blob/master/How_does_it_look/Case_war_cards.jpg" width="200" height="400" />
