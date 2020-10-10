@@ -62,7 +62,7 @@ struct war_case: View {
                     }, label: {
                         Image("dealbutton").renderingMode(.original).padding(.top, 200.0)// Displays the image in its original form
                     }).navigationBarBackButtonHidden(true)
-                        .frame(height:-5.0)
+                    .frame(height:1.0)
                 }
                 else{
                     Button(action: {
@@ -81,7 +81,7 @@ struct war_case: View {
                     }, label: {
                         Image("backButton").renderingMode(.original).padding(.top, 200.0)// Displays the image in its original form
                     }).navigationBarBackButtonHidden(true)
-                        .frame(height:-5.0)
+                    .frame(height:1.0)
                 }
                 
                 

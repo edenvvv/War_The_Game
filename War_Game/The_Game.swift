@@ -103,12 +103,12 @@ struct The_Game: View {
                         VStack(){
                             Text("opponent ").font(.title).bold().padding(.bottom,25)
                             
-                            Spacer().frame(height: -25.0)
+//                            Spacer().frame(height: -25.0)
                             
                             Text("score:").font(.title).bold().padding(.bottom,25)
                         }
                         
-                        Spacer().frame(height: -15.0)
+//                        Spacer().frame(height: -15.0)
                         
                         Text(String(self.opponent_score))
                             .font(.largeTitle)
